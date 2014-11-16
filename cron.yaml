@@ -1,0 +1,11 @@
+cron:
+- description: hourly fetch task
+  url: /__task__/fetch
+  schedule: every 1 hours from 00:55 to 00:54
+- description: 6-hourly tweet task
+  url: /__task__/post
+  schedule: every 6 hours from 00:00 to 23:59
+  timezone: Asia/Tokyo
+- description: 4-hourly follow/unfollow task
+  url: /__task__/follow
+  schedule: every 4 hours from 00:30 to 00:29
