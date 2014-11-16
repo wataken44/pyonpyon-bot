@@ -26,7 +26,6 @@ class FollowHandler(TwitterBaseHandler):
         for k in range(100):
             ids, cursors = self._twitter.followers_ids(cursor=cursors[1])
             followers_ids += ids
-            logging.debug(ids)
             if cursors[1] == 0:
                 break
             time.sleep(1) # wait
@@ -40,7 +39,6 @@ class FollowHandler(TwitterBaseHandler):
         for k in range(100):
             ids, cursors = self._twitter.friends_ids(cursor=cursors[1])
             friends_ids += ids
-            logging.debug(ids)            
             if cursors[1] == 0:
                 break
             time.sleep(1) # wait
