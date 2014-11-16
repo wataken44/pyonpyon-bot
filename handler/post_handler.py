@@ -17,6 +17,6 @@ class PostHandler(TwitterBaseHandler):
 
         time = history[0][0]
         count = history[0][1]
-        text = u"ご注文はうさぎですか？　第1羽は %d 回再生されてます。 http://nico.ms/1397552685 #so23335421 #nicoch" % count
+        text = "ご注文はうさぎですか？　第1羽「ひと目で、尋常でないもふもふだと見抜いたよ」は %d 回再生されてます。 http://nico.ms/1397552685 #so23335421 #nicoch" % count
 
         self._twitter.update_status(text)
