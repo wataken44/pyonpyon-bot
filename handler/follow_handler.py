@@ -48,13 +48,15 @@ class FollowHandler(TwitterBaseHandler):
         new_follow_ids = followers_set.difference(friends_set)
         prob = len(new_follow_ids) / 8.0
         if random.random() < prob:
-            user_id = random.choice(new_follow_ids)
+            user_id = random.choice(list(new_follow_ids))
             self._twitter.create_friendship(user_id=user_id, follow=False)
+            logging.info("followed id %d", user_id)
             
         # unfollow randomly who newly unfollow me
         new_unfollow_ids = friends_set.difference(followers_set)
         prob = len(new_unfollow_ids) / 16.0
         if random.random() < prob:
-            user_id = random.choice(new_unfollow_ids)
+            user_id = random.choice(list(new_unfollow_ids))
             self._twitter.destroy_friendship(user_id=user_id)
+            logging.info("removed id %d", user_id)
         
